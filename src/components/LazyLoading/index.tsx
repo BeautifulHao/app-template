@@ -1,7 +1,6 @@
-
-import React from 'react'
-import science from '../../assets/img/science.svg'
-import styles from './index.module.less'
+import React from 'react';
+import science from '../../assets/img/science.svg';
+import styles from './index.module.less';
 
 const LasyLoading: React.FC<any> = () => (
   <div className={styles.loading}>
@@ -9,6 +8,6 @@ const LasyLoading: React.FC<any> = () => (
       <img src={science} alt="loading" />
     </div>
   </div>
-)
+);
 
-export default LasyLoading
+export default LasyLoading;
