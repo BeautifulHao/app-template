@@ -123,13 +123,6 @@ module.exports = function (webpackEnv) {
           // https://github.com/facebook/create-react-app/issues/2677
           ident: 'postcss',
           plugins: () => [
-            require('postcss-flexbugs-fixes'),
-            require('postcss-preset-env')({
-              autoprefixer: {
-                flexbox: 'no-2009',
-              },
-              stage: 3,
-            }),
             require('postcss-px-to-viewport')({
               // 需要转换的单位，默认为"px"
               unitToConvert: 'px',
@@ -148,7 +141,7 @@ module.exports = function (webpackEnv) {
               // 最小的转换数值
               minPixelValue: 1,
               // 媒体查询里的单位是否需要转换单位
-              mediaQuery: true,
+              mediaQuery: false,
               // 转换后是否添加备用单位
               replace: true,
               // 忽略文件目录
@@ -159,6 +152,13 @@ module.exports = function (webpackEnv) {
               landscapeUnit: 'vh',
               // 横屏时使用的视口宽度
               landscapeWidth: 1334
+            }),
+            require('postcss-flexbugs-fixes'),
+            require('postcss-preset-env')({
+              autoprefixer: {
+                flexbox: 'no-2009',
+              },
+              stage: 3,
             }),
             // Adds PostCSS Normalize as the reset css with default options,
             // so that it honors browserslist config in package.json
