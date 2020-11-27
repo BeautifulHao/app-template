@@ -129,9 +129,9 @@ module.exports = function (webpackEnv) {
               // 设计稿的视口宽度, 将根据视口做比例换算
               viewportWidth: 750,
               // 转化精度，转换后保留位数
-              unitPrecision: 2,
+              unitPrecision: 5,
               // 能转化为vw的属性列表
-              propList: [],
+              propList: ['*'],
               // 希望使用的视口单位
               viewportUnit: 'vw',
               // 字体使用的视口单位
