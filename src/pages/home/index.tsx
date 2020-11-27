@@ -1,12 +1,12 @@
 import React from 'react';
 import './index.less';
 
-function App() {
+const Home: React.FC<any> = () => {
   return (
     <div className="sup-home">
       <span>Hello World!</span>
     </div>
   );
-}
+};
 
-export default App;
+export default Home;
