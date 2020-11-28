@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Redirect } from 'react-router-dom';
 import { RouteConfig } from 'react-router-config';
 import BlankLayout from '../layout/BlankLayout';
-import LazyLoading from '../components/lazyLoading/index';
+import LazyLoading from '../components/LazyLoading/index';
 
 const SuspenseComponent = (Component: React.ComponentType<any>) => {
   return (props: any) => (
