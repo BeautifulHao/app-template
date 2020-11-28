@@ -1,6 +1,7 @@
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
+///<reference types="webpack-env" />
 
 declare namespace NodeJS {
   interface ProcessEnv {
@@ -48,7 +49,7 @@ declare module '*.svg' {
   import * as React from 'react';
 
   export const ReactComponent: React.FunctionComponent<React.SVGProps<
-  SVGSVGElement
+    SVGSVGElement
   > & { title?: string }>;
 
   const src: string;
@@ -76,3 +77,5 @@ declare module '*.module.less' {
 }
 
 declare module '*.less'
+
+declare const window: Window & { WebViewJavascriptBridge: any, WVJBCallbacks: any, __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any };

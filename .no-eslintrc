@@ -92,7 +92,8 @@
     "comma-dangle": "off",
     "@typescript-eslint/comma-dangle": ["off"],
     "no-unused-vars":"off",
-    "no-multiple-empty-lines":"off"
+    "no-multiple-empty-lines":"off",
+    import/no-anonymous-default-export:"off"
   },
   "parserOptions": {
     "project": ["./tsconfig.json"]

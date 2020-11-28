@@ -14,7 +14,7 @@ const SuspenseComponent = (Component: React.ComponentType<any>) => {
 
 const HomePage = SuspenseComponent(lazy(() => import('../pages/home')));
 const AboutPage = SuspenseComponent(lazy(() => import('../pages/about')));
-
+const ProfilePage = SuspenseComponent(lazy(() => import('../pages/profile')));
 
 const routers: RouteConfig[] = [
   {
@@ -29,6 +29,10 @@ const routers: RouteConfig[] = [
       {
         path: '/home',
         component: HomePage
+      },
+      {
+        path: '/profile',
+        component: ProfilePage
       },
       {
         path: '/about',
