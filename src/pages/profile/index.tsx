@@ -4,13 +4,14 @@ import * as actionCreators from "../../stores/user/actionCreators";
 import { withRouter } from "react-router-dom";
 
 const Profile = (props: any) => {
-    const { userInfo = {}, LoginByUserDispatch } = props;
+    const { userInfo = {}, LoginByUserDispatch, loginStatus } = props;
     const getUser = () => {
         LoginByUserDispatch("hello", "world")
     }
     return (
         <div>
-            {userInfo.cname}
+            <div>{userInfo.cname}</div>
+            <div>Login:{loginStatus?"True":"False"}</div>
             <button onClick={getUser}>Login</button>
         </div>
     );
@@ -18,7 +19,8 @@ const Profile = (props: any) => {
 
 // 映射Redux全局的state到组件的props上
 const mapStateToProps = (state: any) => ({
-    userInfo: state.getIn(["user", "userInfo"])
+    userInfo: state.getIn(["user", "userInfo"]),
+    loginStatus: state.getIn(["user", "loginStatus"])
 });
 
 // 映射dispatch到props上

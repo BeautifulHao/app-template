@@ -15,11 +15,14 @@ export const saveLoginStatus = (data: any) => ({
     data
 });
 
-export const loginByUserName = (userName:string, password:string) => {
+export const loginByUserName = (userName: string, password: string) => {
     return (dispatch: (arg0: { type: string; data: any; }) => void) => {
         login(userName, password)
-            .then(res => {
-                dispatch(saveUserInfo(res));
+            .then((res: any) => {
+                if (res.success) {
+                    dispatch(saveUserInfo(res.data));
+                    dispatch(saveLoginStatus(true));
+                }
             })
             .catch(() => {
                 console.log("登录失败！");

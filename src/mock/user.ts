@@ -1,11 +1,12 @@
 import Mock from 'mockjs';
+import { formartJson } from './util'
 
 const getUserInfo = (config: {}) => {
     console.log(config);
-    return Mock.mock({
+    return formartJson(Mock.mock({
         // 邮箱：
         "email": "@email",
-        "brithday":'@date("yyyy-MM-dd")',
+        "brithday": '@date("yyyy-MM-dd")',
         // 颜色
         "color": "@color",
         // name
@@ -25,13 +26,13 @@ const getUserInfo = (config: {}) => {
         "countrysx": "@county(true)",
         //邮政编码
         "code": "@zip",
-        "id":"@id"
-    })
+        "id": "@id"
+    }))
 }
 
 const updateUserInfo = (config: any) => {
     console.log(config);
-    return Mock.mock({ name: "@cname", id: config.id })
+    return formartJson(Mock.mock({ name: "@cname", id: config.id }));
 }
 
 export { getUserInfo, updateUserInfo }
