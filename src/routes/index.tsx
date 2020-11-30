@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Redirect } from 'react-router-dom';
 import { RouteConfig } from 'react-router-config';
-import BlankLayout from '../layout/BlankLayout';
+import HomeLayout from '../layout/HomeLayout';
 import LazyLoading from '../components/LazyLoading/index';
 
 const SuspenseComponent = (Component: React.ComponentType<any>) => {
@@ -15,11 +15,12 @@ const SuspenseComponent = (Component: React.ComponentType<any>) => {
 const HomePage = SuspenseComponent(lazy(() => import('../pages/home')));
 const AboutPage = SuspenseComponent(lazy(() => import('../pages/about')));
 const ProfilePage = SuspenseComponent(lazy(() => import('../pages/profile')));
+const CompassPage = SuspenseComponent(lazy(() => import('../pages/compass')));
 
 const routers: RouteConfig[] = [
   {
     path: '/',
-    component: BlankLayout,
+    component: HomeLayout,
     routes: [
       {
         path: '/',
@@ -37,6 +38,10 @@ const routers: RouteConfig[] = [
       {
         path: '/about',
         component: AboutPage
+      },
+      {
+        path: '/compass',
+        component: CompassPage
       }
     ]
   }

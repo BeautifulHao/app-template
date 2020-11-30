@@ -7,6 +7,12 @@ import reportWebVitals from './reportWebVitals';
 // 开发阶段mock 数据
 import './mock/index';
 
+// requires and returns all modules that match
+const requireAll = (requireContext:any) => requireContext.keys().map(requireContext)
+// import all svg
+const reqSvg = require.context('./assets/svg', true, /\.svg$/)
+requireAll(reqSvg)
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
