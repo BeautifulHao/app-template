@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'antd-mobile/dist/antd-mobile.css'
 
 // 开发阶段mock 数据
 import './mock/index';

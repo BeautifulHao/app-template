@@ -11,7 +11,7 @@
   padding-bottom: calc(@tab-height + env(safe-area-inset-bottom));
 }
 
-.bottom-nav {
+.nav-bar {
   position: fixed;
   z-index: 1;
   left: 0;
@@ -31,6 +31,7 @@
       width: 44px;
       height: 44px;
       fill: @color-base;
+      margin-top: 8px;
       &.scale {
         transform: scale(1.67);
         transform-origin: center;
@@ -40,7 +41,6 @@
       font-weight: @font-weight-small;
       font-size: @font-size-small-s;
       color: @color-base;
-      margin-top: 8px;
     }
     &.active {
       .icon {

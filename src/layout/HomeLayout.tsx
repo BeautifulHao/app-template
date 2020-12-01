@@ -18,21 +18,21 @@ function HomeLayout(props: any) {
   return (
     <div className={styles.root}>
       {renderRoutes(route.routes)}
-      <div className={styles["bottom-nav"]}>
-        <div className={itemCls('/home')} onClick={() => handleClick('/home')}>
+      <div className={styles["nav-bar"]}>
+        <div className={itemCls('/page/home')} onClick={() => handleClick('/page/home')}>
           <SvgIcon className={cls(styles.icon, styles.scale)} name="#elem" />
           <h1 className={styles.text}>主页</h1>
         </div>
 
-        <div className={itemCls('/compass')} onClick={() => handleClick('/compass')}>
+        <div className={itemCls('/page/compass')} onClick={() => handleClick('/page/compass')}>
           <SvgIcon className={styles.icon} name="#compass" />
           <h1 className={styles.text}>发现</h1>
         </div>
-        <div className={itemCls('/about')} onClick={() => handleClick('/about')}>
+        <div className={itemCls('/page/about')} onClick={() => handleClick('/page/about')}>
           <SvgIcon className={styles.icon} name="#form" />
           <h1 className={styles.text}>关于</h1>
         </div>
-        <div className={itemCls('/profile')} onClick={() => handleClick('/profile')}>
+        <div className={itemCls('/page/profile')} onClick={() => handleClick('/page/profile')}>
           <SvgIcon className={styles.icon} name="#people" />
           <h1 className={styles.text}>我的</h1>
         </div>

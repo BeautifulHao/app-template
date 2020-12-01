@@ -8,17 +8,87 @@
   overflow: auto;
 
   .header {
-    height: 44px;
-    width: 100%;
-    text-align: center;
-    background-image: linear-gradient(-90deg, @primary-color, @primary-color-light);
     position: fixed;
     padding-top: constant(safe-area-inset-top);
-    padding-top: 44px;
+    padding-top: env(safe-area-inset-top);
+    height: @header-height;
+    width: 100%;
+    justify-items: center;
+    display: flex;
+    background-image: linear-gradient(
+      -90deg,
+      @primary-color,
+      @primary-color-light
+    );
     color: @tab-theme;
+
+    .header-left {
+      padding-left: 15px;
+      height: 100%;
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 42px;
+        height: 100%;
+        fill: @fill-body;
+        margin-right: 6px;
+      }
+      .desc {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: @font-size-medium;
+        color: @fill-body;
+        font-weight: @font-weight-medium;
+      }
+    }
+
+    .header-center {
+      flex: 1 1 auto;
+      .header-search {
+        height: 100%;
+        box-sizing: border-box;
+        padding: 15px 15px;
+        .search-box {
+          height: 100%;
+          background-color: @fill-body;
+          border-radius: 5px;
+          text-align: center;
+          .icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 42px;
+            height: 100%;
+            fill: @color-base;
+            margin-right: 6px;
+          }
+          .desc {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: @font-size-medium;
+            color: @color-base;
+            font-weight: @font-weight-small;
+          }
+        }
+      }
+    }
+
+    .header-right {
+      padding-right: 15px;
+      height: 100%;
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 42px;
+        height: 100%;
+        fill: @fill-body;
+        margin-right: 6px;
+      }
+    }
   }
 
   .content {
-    padding-top: 88px;
+    padding-top: @header-height;
+    padding-top: calc(@header-height + constant(safe-area-inset-top));
+    padding-top: calc(@header-height + env(safe-area-inset-top));
   }
 }

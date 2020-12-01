@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { RouteConfig } from 'react-router-config';
 import HomeLayout from '../layout/HomeLayout';
 import LazyLoading from '../components/LazyLoading/index';
+import BlankLayout from '../layout/BlankLayout';
 
 const SuspenseComponent = (Component: React.ComponentType<any>) => {
   return (props: any) => (
@@ -19,31 +20,35 @@ const CompassPage = SuspenseComponent(lazy(() => import('../pages/compass')));
 
 const routers: RouteConfig[] = [
   {
-    path: '/',
+    path: '/page',
     component: HomeLayout,
     routes: [
       {
-        path: '/',
+        path: '/page',
         exact: true,
-        render: () => <Redirect to="/home" />
+        render: () => <Redirect to="/page/home" />
       },
       {
-        path: '/home',
+        path: '/page/home',
         component: HomePage
       },
       {
-        path: '/profile',
+        path: '/page/profile',
         component: ProfilePage
       },
       {
-        path: '/about',
+        path: '/page/about',
         component: AboutPage
       },
       {
-        path: '/compass',
+        path: '/page/compass',
         component: CompassPage
       }
     ]
+  },
+  {
+    path:'/',
+    component:BlankLayout
   }
 ];
 
