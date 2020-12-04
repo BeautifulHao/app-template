@@ -3,6 +3,7 @@ import styles from './index.module.less';
 import SvgIcon from '../../components/icon-svg/index'
 import Slide from './slide'
 import TitleBar from '../../components/title-bar/index'
+import Entry from './entry/index'
 
 const Home: React.FC<any> = () => {
 
@@ -28,6 +29,7 @@ const Home: React.FC<any> = () => {
 
       <div className={styles.content}>
         <Slide></Slide>
+        <Entry/>
         <TitleBar  title="详细信息" ></TitleBar>
       </div>
     </div>
