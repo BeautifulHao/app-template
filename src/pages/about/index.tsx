@@ -1,9 +1,11 @@
 import React, { FC, useState } from 'react';
 import { Button, Card, NavBar, Icon, Grid, Popover } from 'antd-mobile'
+import styles from './index.module.less'
+
 const Item = Popover.Item;
 
 const About: FC<any> = () => {
-  const data = Array.from(new Array(9)).map((_val, i) => ({
+  const data = Array.from(new Array(36)).map((_val, i) => ({
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
     text: `name${i}`,
     key: `${i}`
@@ -20,6 +22,7 @@ const About: FC<any> = () => {
       selected: opt.props.value,
     });
   };
+
   const handleVisibleChange = (visible: boolean) => {
     setRightState({
       visible: visible, selected: rightState.selected
@@ -29,7 +32,8 @@ const About: FC<any> = () => {
   const myImg = (src: string) => <img src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`} className="am-icon am-icon-xs" alt="" />;
 
   return (
-    <div>
+    <div className={styles.root}>
+      <div className={styles.header}></div>
       <NavBar
         mode="dark"
         leftContent="关于"
