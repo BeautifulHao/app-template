@@ -11,7 +11,7 @@
     position: fixed;
     padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);
-    height: @header-height;
+    height: @bar-height;
     width: 100%;
     justify-items: center;
     display: flex;
@@ -87,8 +87,9 @@
   }
 
   .content {
-    padding-top: @header-height;
-    padding-top: calc(@header-height + constant(safe-area-inset-top));
-    padding-top: calc(@header-height + env(safe-area-inset-top));
+    padding-top: @bar-height;
+    padding-top: calc(@bar-height + constant(safe-area-inset-top));
+    padding-top: calc(@bar-height + env(safe-area-inset-top));
+    box-sizing: border-box;
   }
 }
