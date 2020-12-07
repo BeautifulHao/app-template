@@ -1,7 +1,7 @@
 
 import React, { FC } from 'react'
 import cls from 'classnames'
-import styles from './index.less'
+import styles from './index.module.less'
 
 export interface SvgIconProps {
   name: string,

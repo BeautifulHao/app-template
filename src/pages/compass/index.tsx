@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
+import NavBar from '../../components/nav-bar/index'
 
-export default function index() {
+const Compass:FC<any> = (props:any) => {
   return (
-    <div></div>
+    <div>
+        <NavBar
+          title="发现"
+          iconLeft="#back"
+          leftClick={() => props.history.goBack()} />
+    </div>
   );
 }
+
+export default Compass;
