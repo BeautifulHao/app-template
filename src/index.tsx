@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'antd-mobile/dist/antd-mobile.css'
 
 // 开发阶段mock 数据
 import './mock/index';
@@ -28,6 +27,3 @@ if (module.hot) {
         );
     });
 }
-
-// TODO:参考React TS开源示例
-// TODO：移动页面开发：主页、新闻、消息、我的
