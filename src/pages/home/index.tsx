@@ -7,6 +7,8 @@ import Entry from './entry/index'
 
 const Home: React.FC<any> = () => {
 
+  console.log(process.env)
+
   return (
     <div className={styles.root}>
       <div className={styles.header}>

@@ -5,7 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // 开发阶段mock 数据
-import './mock/index';
+if(process.env.MOCK === "true"){
+    require("./mock/index")
+}
 
 // requires and returns all modules that match
 const requireAll = (requireContext:any) => requireContext.keys().map(requireContext)
