@@ -7,14 +7,12 @@ import Entry from './entry/index'
 
 const Home: React.FC<any> = () => {
 
-  console.log(process.env)
-
   return (
     <div className={styles.root}>
       <div className={styles.header}>
         <div className={styles["header-left"]}>
           <SvgIcon name={'#location'} className={styles.icon} ></SvgIcon>
-          <p className={styles.desc}>杭州</p>
+          <p className={styles.desc}>杭州</p> 
         </div>
         <div className={styles["header-center"]}>
           <div className={styles["header-search"]}>
