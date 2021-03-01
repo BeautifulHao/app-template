@@ -1,7 +1,7 @@
 
-import React, { FC } from 'react'
-import cls from 'classnames'
-import styles from './index.module.less'
+import React, { FC } from 'react';
+import cls from 'classnames';
+import styles from './index.module.less';
 
 export interface SvgIconProps {
   name: string,
@@ -18,4 +18,4 @@ const SvgIcon:FC<SvgIconProps> = ({ name, className, onClick = () => { } }) => {
   );
 };
 
-export default SvgIcon
+export default SvgIcon;

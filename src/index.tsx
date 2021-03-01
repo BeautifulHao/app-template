@@ -5,15 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // 开发阶段mock 数据
-if (process.env.MOCK === "true") {
-    require("./mock/index")
+if (process.env.MOCK === 'true') {
+  // eslint-disable-next-line global-require
+  require('./mock/index');
 }
 
 // requires and returns all modules that match
-const requireAll = (requireContext: any) => requireContext.keys().map(requireContext)
+const requireAll = (requireContext: any) => requireContext.keys().map(requireContext);
 // import all svg
-const reqSvg = require.context('./assets/svg', true, /\.svg$/)
-requireAll(reqSvg)
+const reqSvg = require.context('./assets/svg', true, /\.svg$/);
+requireAll(reqSvg);
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -22,10 +23,10 @@ ReactDOM.render(<App />, document.getElementById('root'));
 reportWebVitals();
 
 if (module.hot) {
-    module.hot.accept(() => {
-        ReactDOM.render(
-            <App />,
-            document.getElementById('root')
-        );
-    });
+  module.hot.accept(() => {
+    ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+    );
+  });
 }

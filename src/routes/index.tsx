@@ -11,7 +11,7 @@ const SuspenseComponent = (Component: React.ComponentType<any>) => {
       <Component {...props} />
     </Suspense>
   );
-}
+};
 
 const HomePage = SuspenseComponent(lazy(() => import('../pages/home')));
 const AboutPage = SuspenseComponent(lazy(() => import('../pages/about')));
@@ -47,8 +47,8 @@ const routers: RouteConfig[] = [
     ]
   },
   {
-    path:'/',
-    component:BlankLayout
+    path: '/',
+    component: BlankLayout
   }
 ];
 

@@ -1,24 +1,24 @@
-import React from "react";
-import { renderRoutes } from "react-router-config";
-import styles from './home.module.less'
+import React from 'react';
+import { renderRoutes } from 'react-router-config';
 import cls from 'classnames';
-import SvgIcon from '../components/icon-svg/index'
+import styles from './home.module.less';
+import SvgIcon from '../components/icon-svg/index';
 
 function HomeLayout(props: any) {
   const { route, location: { pathname } } = props;
   const itemCls = (name: string) => cls({
     [styles.item]: true,
     [styles.active]: pathname === name,
-  })
+  });
   const handleClick = (path: string) => {
-    if (path === pathname) return
-    props.history.push(path)
-  }
+    if (path === pathname) return;
+    props.history.push(path);
+  };
 
   return (
     <div className={styles.root}>
       {renderRoutes(route.routes)}
-      <div className={styles["nav-bar"]}>
+      <div className={styles['nav-bar']}>
         <div className={itemCls('/page/home')} onClick={() => handleClick('/page/home')}>
           <SvgIcon className={cls(styles.icon, styles.scale)} name="#elem" />
           <h1 className={styles.text}>主页</h1>

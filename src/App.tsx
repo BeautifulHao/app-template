@@ -1,8 +1,8 @@
 import React from 'react';
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
-import store from "./stores";
 import { HashRouter } from 'react-router-dom';
+import store from './stores';
 import routes from './routes';
 
 function App() {

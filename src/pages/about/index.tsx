@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 import React, { FC, useState } from 'react';
-import { Button, Card, NavBar, Icon, Grid, Popover } from 'antd-mobile'
-import styles from './index.module.less'
+import { Button, Card, NavBar, Icon, Grid, Popover } from 'antd-mobile';
+import styles from './index.module.less';
 
-const Item = Popover.Item;
+const { Item } = Popover;
 
 const About: FC<any> = () => {
   const data = Array.from(new Array(36)).map((_val, i) => ({
@@ -25,7 +26,7 @@ const About: FC<any> = () => {
 
   const handleVisibleChange = (visible: boolean) => {
     setRightState({
-      visible: visible, selected: rightState.selected
+      visible, selected: rightState.selected
     });
   };
 
@@ -33,20 +34,20 @@ const About: FC<any> = () => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.header}></div>
+      <div className={styles.header} />
       <NavBar
         mode="dark"
         leftContent="关于"
         rightContent={[
           <Icon key="1" type="search" style={{ marginRight: '16px' }} />,
-          <Popover key="2" mask
+          <Popover
+            key="2"
+            mask
             visible={rightState.visible}
             overlay={[
               (<Item key="4" icon={myImg('tOtXhkIWzwotgGSeptou')} data-seed="logId">扫一扫</Item>),
               (<Item key="5" icon={myImg('PKAgAqZWJVNwKsAJSmXd')} style={{ whiteSpace: 'nowrap' }}>二维码</Item>),
-              (<Item key="6" icon={myImg('uQIYTFeRrjPELImDRrPt')}>
-                <span style={{ marginRight: 5 }}>帮助</span>
-              </Item>),
+              (<Item key="6" icon={myImg('uQIYTFeRrjPELImDRrPt')}><span style={{ marginRight: 5 }}>帮助</span></Item>),
             ]}
             align={{
               overflow: { adjustY: 0, adjustX: 0 }
@@ -66,7 +67,7 @@ const About: FC<any> = () => {
             </div>
           </Popover>
         ]}
-      ></NavBar>
+      />
       <Button>Ok</Button>
       <Card>
         <Card.Header
@@ -79,10 +80,10 @@ const About: FC<any> = () => {
         </Card.Body>
         <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
       </Card>
-      <Grid data={data} onClick={_el => console.log(_el)} />
+      <Grid data={data} onClick={(_el) => console.log(_el)} />
     </div>
   );
-}
+};
 
 
 export default About;

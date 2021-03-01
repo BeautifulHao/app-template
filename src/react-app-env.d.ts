@@ -1,7 +1,7 @@
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
-///<reference types="webpack-env" />
+/// <reference types="webpack-env" />
 
 declare namespace NodeJS {
   interface ProcessEnv {
@@ -49,7 +49,7 @@ declare module '*.svg' {
   import * as React from 'react';
 
   export const ReactComponent: React.FunctionComponent<React.SVGProps<
-    SVGSVGElement
+  SVGSVGElement
   > & { title?: string }>;
 
   const src: string;
