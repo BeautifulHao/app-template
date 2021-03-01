@@ -3,7 +3,7 @@ const formartJson = (data: any) => {
     success: true,
     data,
     msg: 'success',
-    code: 200
+    code: 200,
   };
 };
 

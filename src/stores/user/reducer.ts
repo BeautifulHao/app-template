@@ -3,10 +3,10 @@ import * as actionTypes from './constants';
 
 const defaultState = fromJS({
   userInfo: {},
-  loginStatus: false
+  loginStatus: false,
 });
 
-const reducer = (state = defaultState, action: { type: string; data: any; }) => {
+const reducer = (state = defaultState, action: { type: string; data: any }) => {
   switch (action.type) {
     case actionTypes.CHANGE_USER_INFO:
       return state.set('userInfo', action.data);

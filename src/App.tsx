@@ -8,9 +8,7 @@ import routes from './routes';
 function App() {
   return (
     <Provider store={store}>
-      <HashRouter>
-        {renderRoutes(routes)}
-      </HashRouter>
+      <HashRouter>{renderRoutes(routes)}</HashRouter>
     </Provider>
   );
 }

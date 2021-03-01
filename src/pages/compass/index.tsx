@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import NavBar from '../../components/nav-bar/index';
 import styles from './index.module.less';
 
-const Compass:FC<any> = (props:any) => {
+const Compass: FC<any> = (props: any) => {
   return (
     <div className={styles.root}>
       <NavBar

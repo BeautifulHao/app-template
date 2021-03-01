@@ -12,31 +12,25 @@ const Profile = (props: any) => {
 
   useEffect(() => {
     LoginByUserDispatch('hello', 'world');
-  }, []);
+  }, [LoginByUserDispatch]);
 
   return (
     <div className={styles.root}>
       <div className={styles.profile}>
         <div className={styles.avatar}>
-          {
-            loginStatus ? (
-              <img src={avatarUrl} className={styles.img} alt="" />
-            ) : <SvgIcon name="#avatar" className={styles.icon} />
-          }
+          {loginStatus ? (
+            <img src={avatarUrl} className={styles.img} alt="" />
+          ) : (
+            <SvgIcon name="#avatar" className={styles.icon} />
+          )}
         </div>
         <div className={styles.desc}>
           <p className={styles.info}>
-            {
-              !loginStatus ? '登陆/注册' : userInfo.name
-            }
+            {!loginStatus ? '登陆/注册' : userInfo.name}
           </p>
           <p className={styles.text}>
             <SvgIcon name="#iphone" className={styles.icon} />
-            <span>
-              {
-                !loginStatus ? '登陆后享受更多特权' : userInfo.ccity
-              }
-            </span>
+            <span>{!loginStatus ? '登陆后享受更多特权' : userInfo.ccity}</span>
           </p>
         </div>
         <SvgIcon name="#right" className={styles.iconRight} />
@@ -82,7 +76,6 @@ const Profile = (props: any) => {
           <SvgIcon name="#right" className={styles['icon-right']} />
         </div>
       </div>
-
     </div>
   );
 };
@@ -90,7 +83,7 @@ const Profile = (props: any) => {
 // 映射Redux全局的state到组件的props上
 const mapStateToProps = (state: any) => ({
   userInfo: state.getIn(['user', 'userInfo']),
-  loginStatus: state.getIn(['user', 'loginStatus'])
+  loginStatus: state.getIn(['user', 'loginStatus']),
 });
 
 // 映射dispatch到props上
@@ -98,11 +91,11 @@ const mapDispatchToProps = (dispatch: any) => {
   return {
     LoginByUserDispatch(userName: string, password: string) {
       dispatch(actionCreators.loginByUserName(userName, password));
-    }
+    },
   };
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(React.memo(withRouter(Profile)));

@@ -4,7 +4,7 @@ export const baseUrl = '';
 
 // axios的实例及拦截器配置
 const axiosInstance = axios.create({
-  baseURL: baseUrl
+  baseURL: baseUrl,
 });
 
 axiosInstance.interceptors.response.use(

@@ -26,30 +26,30 @@ const routers: RouteConfig[] = [
       {
         path: '/page',
         exact: true,
-        render: () => <Redirect to="/page/home" />
+        render: () => <Redirect to="/page/home" />,
       },
       {
         path: '/page/home',
-        component: HomePage
+        component: HomePage,
       },
       {
         path: '/page/profile',
-        component: ProfilePage
+        component: ProfilePage,
       },
       {
         path: '/page/about',
-        component: AboutPage
+        component: AboutPage,
       },
       {
         path: '/page/compass',
-        component: CompassPage
-      }
-    ]
+        component: CompassPage,
+      },
+    ],
   },
   {
     path: '/',
-    component: BlankLayout
-  }
+    component: BlankLayout,
+  },
 ];
 
 export default routers;

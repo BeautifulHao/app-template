@@ -27,7 +27,7 @@ const Slide: FC<any> = () => {
       momentum: false,
       bounce: false,
       stopPropagation: true,
-      probeType: 3
+      probeType: 3,
     });
 
     scroll.on('slideWillChange', (page: any) => {
@@ -40,11 +40,13 @@ const Slide: FC<any> = () => {
     };
   }, []);
 
-
   return (
     <div className={styles['slide-banner']}>
       <div className={styles['banner-wrapper']}>
-        <div className={styles['slide-banner-wrapper']} ref={scrollContaninerRef}>
+        <div
+          className={styles['slide-banner-wrapper']}
+          ref={scrollContaninerRef}
+        >
           <div className={styles['slide-banner-content']}>
             <div className={cls(styles['slide-page'], styles.page1)}>
               <img src={img1} alt="img1" className={styles.img} />

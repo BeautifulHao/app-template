@@ -9,7 +9,7 @@ const About: FC<any> = () => {
   const data = Array.from(new Array(36)).map((_val, i) => ({
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
     text: `name${i}`,
-    key: `${i}`
+    key: `${i}`,
   }));
 
   const [rightState, setRightState] = useState({
@@ -26,11 +26,18 @@ const About: FC<any> = () => {
 
   const handleVisibleChange = (visible: boolean) => {
     setRightState({
-      visible, selected: rightState.selected
+      visible,
+      selected: rightState.selected,
     });
   };
 
-  const myImg = (src: string) => <img src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`} className="am-icon am-icon-xs" alt="" />;
+  const myImg = (src: string) => (
+    <img
+      src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`}
+      className="am-icon am-icon-xs"
+      alt=""
+    />
+  );
 
   return (
     <div className={styles.root}>
@@ -45,27 +52,42 @@ const About: FC<any> = () => {
             mask
             visible={rightState.visible}
             overlay={[
-              (<Item key="4" icon={myImg('tOtXhkIWzwotgGSeptou')} data-seed="logId">扫一扫</Item>),
-              (<Item key="5" icon={myImg('PKAgAqZWJVNwKsAJSmXd')} style={{ whiteSpace: 'nowrap' }}>二维码</Item>),
-              (<Item key="6" icon={myImg('uQIYTFeRrjPELImDRrPt')}><span style={{ marginRight: 5 }}>帮助</span></Item>),
+              <Item
+                key="4"
+                icon={myImg('tOtXhkIWzwotgGSeptou')}
+                data-seed="logId"
+              >
+                扫一扫
+              </Item>,
+              <Item
+                key="5"
+                icon={myImg('PKAgAqZWJVNwKsAJSmXd')}
+                style={{ whiteSpace: 'nowrap' }}
+              >
+                二维码
+              </Item>,
+              <Item key="6" icon={myImg('uQIYTFeRrjPELImDRrPt')}>
+                <span style={{ marginRight: 5 }}>帮助</span>
+              </Item>,
             ]}
             align={{
-              overflow: { adjustY: 0, adjustX: 0 }
+              overflow: { adjustY: 0, adjustX: 0 },
             }}
             onVisibleChange={handleVisibleChange}
             onSelect={onSelect}
           >
-            <div style={{
-              height: '100%',
-              padding: '0 15px',
-              marginRight: '-15px',
-              display: 'flex',
-              alignItems: 'center',
-            }}
+            <div
+              style={{
+                height: '100%',
+                padding: '0 15px',
+                marginRight: '-15px',
+                display: 'flex',
+                alignItems: 'center',
+              }}
             >
               <Icon type="ellipsis" key="8" />
             </div>
-          </Popover>
+          </Popover>,
         ]}
       />
       <Button>Ok</Button>
@@ -78,12 +100,14 @@ const About: FC<any> = () => {
         <Card.Body>
           <div>This is content of `Card`</div>
         </Card.Body>
-        <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
+        <Card.Footer
+          content="footer content"
+          extra={<div>extra footer content</div>}
+        />
       </Card>
       <Grid data={data} onClick={(_el) => console.log(_el)} />
     </div>
   );
 };
-
 
 export default About;

@@ -5,8 +5,8 @@
   "scripts": {
     "start": "PORT=9528 node scripts/start.js",
     "build": "node scripts/build.js",
-    "start:mock":"PORT=9528 MOCK=true node scripts/start.js",
-    "deploy":"GENERATE_SOURCEMAP=false node scripts/build.js",
+    "start:mock": "PORT=9528 MOCK=true node scripts/start.js",
+    "deploy": "GENERATE_SOURCEMAP=false node scripts/build.js",
     "test": "node scripts/test.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src"
