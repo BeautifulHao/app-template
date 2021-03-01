@@ -19,23 +19,23 @@ const Profile = (props: any) => {
       <div className={styles.profile}>
         <div className={styles.avatar}>
           {
-                        loginStatus ? (
-                          <img src={avatarUrl} className={styles.img} alt="" />
-                        ) : <SvgIcon name="#avatar" className={styles.icon} />
-                    }
+            loginStatus ? (
+              <img src={avatarUrl} className={styles.img} alt="" />
+            ) : <SvgIcon name="#avatar" className={styles.icon} />
+          }
         </div>
         <div className={styles.desc}>
           <p className={styles.info}>
             {
-                            !loginStatus ? '登陆/注册' : userInfo.name
-                        }
+              !loginStatus ? '登陆/注册' : userInfo.name
+            }
           </p>
           <p className={styles.text}>
             <SvgIcon name="#iphone" className={styles.icon} />
             <span>
               {
-                                !loginStatus ? '登陆后享受更多特权' : userInfo.ccity
-                            }
+                !loginStatus ? '登陆后享受更多特权' : userInfo.ccity
+              }
             </span>
           </p>
         </div>
