@@ -1,17 +1,20 @@
 import React from 'react';
+import { useIntl } from 'react-intl';
 import styles from './index.module.less';
 import SvgIcon from '../../components/icon-svg/index';
 import Slide from './slide';
 import TitleBar from '../../components/title-bar/index';
 import Entry from './entry/index';
+import messages from './messages';
 
 const Home: React.FC<any> = () => {
+  const intl = useIntl();
   return (
     <div className={styles.root}>
       <div className={styles.header}>
         <div className={styles['header-left']}>
           <SvgIcon name="#location" className={styles.icon} />
-          <p className={styles.desc}>杭州</p>
+          <p className={styles.desc}>{intl.formatMessage(messages.hangzhou)}</p>
         </div>
         <div className={styles['header-center']}>
           <div className={styles['header-search']}>
