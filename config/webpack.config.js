@@ -450,7 +450,7 @@ module.exports = function (webpackEnv) {
                   require.resolve('react-refresh/babel'),
                   ["import", {
                     libraryName: "antd-mobile",
-                    style: 'css'
+                    style: true
                   }]
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -565,7 +565,6 @@ module.exports = function (webpackEnv) {
               include: [/\/node_modules/, /\/src/],
               use: getStyleLoaders({
                   importLoaders: 3,
-                  modules: true,
                   sourceMap: isEnvProduction ?
                     shouldUseSourceMap : isEnvDevelopment,
                 },
