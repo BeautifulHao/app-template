@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { FC, useState } from 'react';
 import { Button, Card, NavBar, Icon, Grid, Popover } from 'antd-mobile';
-import styles from './index.module.less';
+import './index.less';
 
 const { Item } = Popover;
 
@@ -40,8 +40,8 @@ const About: FC<any> = () => {
   );
 
   return (
-    <div className={styles.root}>
-      <div className={styles.header} />
+    <div className="about-root">
+      <div className="styles.header" />
       <NavBar
         mode="dark"
         leftContent="关于"
