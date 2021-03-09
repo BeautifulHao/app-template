@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.less';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import initTheme from './theme/themeHandler';
 
 // 开发阶段mock 数据
 if (process.env.MOCK === 'true') {
   // eslint-disable-next-line global-require
   require('./mock/index');
 }
+
+initTheme();
 
 // requires and returns all modules that match
 const requireAll = (requireContext: any) => requireContext.keys().map(requireContext);

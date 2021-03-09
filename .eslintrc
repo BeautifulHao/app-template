@@ -103,7 +103,8 @@
     "@typescript-eslint/no-explicit-any": ["off"],
     "@typescript-eslint/explicit-module-boundary-types":["off"],
     "no-multiple-empty-lines": ["off"],
-    "import/no-anonymous-default-export": ["off"]
+    "import/no-anonymous-default-export": ["off"],
+    "restrict-template-expressions":["off"]
   },
   "parserOptions": {
     "project": ["./tsconfig.json"]

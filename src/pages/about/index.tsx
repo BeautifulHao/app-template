@@ -91,6 +91,7 @@ const About: FC<any> = () => {
         ]}
       />
       <Button>Ok</Button>
+      <div className="about-theme">Theme Show</div>
       <Card>
         <Card.Header
           title="This is title"
